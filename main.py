@@ -42,7 +42,7 @@ def download_video(word, video_info):
     Downloads a single video with retry logic and streaming fix.
     
     Args:
-        word: Word name (for filename)
+        word: Video ID (e.g., "22-01")
         video_info: Dict containing 'url' and 'vid_id'
     
     Returns:
@@ -54,8 +54,8 @@ def download_video(word, video_info):
     if not url:
         return (word, False, "No URL found")
     
-    safe_filename = sanitize_filename(word)
-    output_path = os.path.join(OUTPUT_FOLDER, f"{safe_filename}.mp4")
+    # Use video ID as filename for clarity
+    output_path = os.path.join(OUTPUT_FOLDER, f"{vid_id}.mp4")
     
     # Skip if already downloaded and file is valid
     if os.path.exists(output_path):
