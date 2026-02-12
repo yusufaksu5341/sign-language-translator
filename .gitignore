@@ -1,6 +1,10 @@
 # Large video files
 tid_dataset/
 *.mp4
+models/
+processed/
+*.joblib
+*.npz
 
 # Python
 __pycache__/
