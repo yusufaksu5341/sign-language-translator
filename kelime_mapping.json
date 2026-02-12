@@ -1,0 +1,927 @@
+{
+  "Sözlük Kullanımı": {
+    "vid_id": "12-01",
+    "folder_id": "0012",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0012/degiske/12-01_cr_0.1.mp4"
+  },
+  "Hakkında": {
+    "vid_id": "22-01",
+    "folder_id": "0022",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0022/degiske/22-01_cr_0.1.mp4"
+  },
+  "Proje Ekibi": {
+    "vid_id": "22-02",
+    "folder_id": "0022",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0022/degiske/22-02_cr_0.1.mp4"
+  },
+  "İletişim": {
+    "vid_id": "35-01",
+    "folder_id": "0035",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0035/degiske/35-01_cr_0.1.mp4"
+  },
+  "Sözcük": {
+    "vid_id": "35-02",
+    "folder_id": "0035",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0035/degiske/35-02_cr_0.1.mp4"
+  },
+  "İşaret": {
+    "vid_id": "38-01",
+    "folder_id": "0038",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0038/degiske/38-01_cr_0.1.mp4"
+  },
+  "Alfabetik": {
+    "vid_id": "43-01",
+    "folder_id": "0043",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0043/degiske/43-01_cr_0.1.mp4"
+  },
+  "Vücut önü": {
+    "vid_id": "44-01",
+    "folder_id": "0044",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0044/degiske/44-01_cr_0.1.mp4"
+  },
+  "Ön yüz": {
+    "vid_id": "44-03",
+    "folder_id": "0044",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0044/degiske/44-03_cr_0.1.mp4"
+  },
+  "Baş": {
+    "vid_id": "55-01",
+    "folder_id": "0055",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0055/degiske/55-01_cr_0.1.mp4"
+  },
+  "Başın üstü/tepesi": {
+    "vid_id": "74-01",
+    "folder_id": "0074",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0074/degiske/74-01_cr_0.1.mp4"
+  },
+  "Göz": {
+    "vid_id": "75-01",
+    "folder_id": "0075",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0075/degiske/75-01_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_01-01": {
+    "vid_id": "01-01",
+    "folder_id": "0001",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0001/degiske/01-01_cr_0.1.mp4"
+  },
+  "Hakkında_01-02": {
+    "vid_id": "01-02",
+    "folder_id": "0001",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0001/degiske/01-02_cr_0.1.mp4"
+  },
+  "Proje Ekibi_01-03": {
+    "vid_id": "01-03",
+    "folder_id": "0001",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0001/degiske/01-03_cr_0.1.mp4"
+  },
+  "İletişim_04-01": {
+    "vid_id": "04-01",
+    "folder_id": "0004",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0004/degiske/04-01_cr_0.1.mp4"
+  },
+  "Sözcük_04-02": {
+    "vid_id": "04-02",
+    "folder_id": "0004",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0004/degiske/04-02_cr_0.1.mp4"
+  },
+  "İşaret_06-01": {
+    "vid_id": "06-01",
+    "folder_id": "0006",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0006/degiske/06-01_cr_0.1.mp4"
+  },
+  "Alfabetik_13-01": {
+    "vid_id": "13-01",
+    "folder_id": "0013",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0013/degiske/13-01_cr_0.1.mp4"
+  },
+  "Vücut önü_13-02": {
+    "vid_id": "13-02",
+    "folder_id": "0013",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0013/degiske/13-02_cr_0.1.mp4"
+  },
+  "Ön yüz_13-03": {
+    "vid_id": "13-03",
+    "folder_id": "0013",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0013/degiske/13-03_cr_0.1.mp4"
+  },
+  "Baş_25-01": {
+    "vid_id": "25-01",
+    "folder_id": "0025",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0025/degiske/25-01_cr_0.1.mp4"
+  },
+  "Başın üstü/tepesi_30-01": {
+    "vid_id": "30-01",
+    "folder_id": "0030",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0030/degiske/30-01_cr_0.1.mp4"
+  },
+  "Göz_30-03": {
+    "vid_id": "30-03",
+    "folder_id": "0030",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0030/degiske/30-03_cr_0.1.mp4"
+  },
+  "Burun": {
+    "vid_id": "30-04",
+    "folder_id": "0030",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0030/degiske/30-04_cr_0.1.mp4"
+  },
+  "Kulak": {
+    "vid_id": "51-01",
+    "folder_id": "0051",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0051/degiske/51-01_cr_0.1.mp4"
+  },
+  "Yanak": {
+    "vid_id": "80-01",
+    "folder_id": "0080",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0080/degiske/80-01_cr_0.1.mp4"
+  },
+  "Ağız çevresi": {
+    "vid_id": "80-02",
+    "folder_id": "0080",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0080/degiske/80-02_cr_0.1.mp4"
+  },
+  "Vücut": {
+    "vid_id": "81-01",
+    "folder_id": "0081",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0081/degiske/81-01_cr_0.1.mp4"
+  },
+  "Boğaz/Boyun": {
+    "vid_id": "88-02",
+    "folder_id": "0088",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0088/degiske/88-02_cr_0.1.mp4"
+  },
+  "Omuz": {
+    "vid_id": "88-03",
+    "folder_id": "0088",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0088/degiske/88-03_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_78-02": {
+    "vid_id": "78-02",
+    "folder_id": "0078",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0078/degiske/78-02_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_36-01": {
+    "vid_id": "36-01",
+    "folder_id": "0036",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0036/degiske/36-01_cr_0.1.mp4"
+  },
+  "Hakkında_36-02": {
+    "vid_id": "36-02",
+    "folder_id": "0036",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0036/degiske/36-02_cr_0.1.mp4"
+  },
+  "Proje Ekibi_66-02": {
+    "vid_id": "66-02",
+    "folder_id": "0066",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0066/degiske/66-02_cr_0.1.mp4"
+  },
+  "İletişim_66-05": {
+    "vid_id": "66-05",
+    "folder_id": "0066",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0066/degiske/66-05_cr_0.1.mp4"
+  },
+  "Sözcük_72-01": {
+    "vid_id": "72-01",
+    "folder_id": "0072",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0072/degiske/72-01_cr_0.1.mp4"
+  },
+  "İşaret_72-02": {
+    "vid_id": "72-02",
+    "folder_id": "0072",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0072/degiske/72-02_cr_0.1.mp4"
+  },
+  "Alfabetik_87-01": {
+    "vid_id": "87-01",
+    "folder_id": "0087",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0087/degiske/87-01_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_15-01": {
+    "vid_id": "15-01",
+    "folder_id": "0015",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0015/degiske/15-01_cr_0.1.mp4"
+  },
+  "Hakkında_15-02": {
+    "vid_id": "15-02",
+    "folder_id": "0015",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0015/degiske/15-02_cr_0.1.mp4"
+  },
+  "Proje Ekibi_15-03": {
+    "vid_id": "15-03",
+    "folder_id": "0015",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0015/degiske/15-03_cr_0.1.mp4"
+  },
+  "İletişim_52-01": {
+    "vid_id": "52-01",
+    "folder_id": "0052",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0052/degiske/52-01_cr_0.1.mp4"
+  },
+  "Sözcük_69-01": {
+    "vid_id": "69-01",
+    "folder_id": "0069",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0069/degiske/69-01_cr_0.1.mp4"
+  },
+  "İşaret_70-01": {
+    "vid_id": "70-01",
+    "folder_id": "0070",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0070/degiske/70-01_cr_0.1.mp4"
+  },
+  "Alfabetik_79-01": {
+    "vid_id": "79-01",
+    "folder_id": "0079",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0079/degiske/79-01_cr_0.1.mp4"
+  },
+  "Vücut önü_79-02": {
+    "vid_id": "79-02",
+    "folder_id": "0079",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0079/degiske/79-02_cr_0.1.mp4"
+  },
+  "Ön yüz_82-01": {
+    "vid_id": "82-01",
+    "folder_id": "0082",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0082/degiske/82-01_cr_0.1.mp4"
+  },
+  "Baş_82-02": {
+    "vid_id": "82-02",
+    "folder_id": "0082",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0082/degiske/82-02_cr_0.1.mp4"
+  },
+  "Başın üstü/tepesi_97-01": {
+    "vid_id": "97-01",
+    "folder_id": "0097",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0097/degiske/97-01_cr_0.1.mp4"
+  },
+  "Göz_97-02": {
+    "vid_id": "97-02",
+    "folder_id": "0097",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0097/degiske/97-02_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_17-01": {
+    "vid_id": "17-01",
+    "folder_id": "0017",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0017/degiske/17-01_cr_0.1.mp4"
+  },
+  "Hakkında_17-02": {
+    "vid_id": "17-02",
+    "folder_id": "0017",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0017/degiske/17-02_cr_0.1.mp4"
+  },
+  "Proje Ekibi_31-01": {
+    "vid_id": "31-01",
+    "folder_id": "0031",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0031/degiske/31-01_cr_0.1.mp4"
+  },
+  "İletişim_31-02": {
+    "vid_id": "31-02",
+    "folder_id": "0031",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0031/degiske/31-02_cr_0.1.mp4"
+  },
+  "Sözcük_73-01": {
+    "vid_id": "73-01",
+    "folder_id": "0073",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0073/degiske/73-01_cr_0.1.mp4"
+  },
+  "İşaret_91-01": {
+    "vid_id": "91-01",
+    "folder_id": "0091",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0091/degiske/91-01_cr_0.1.mp4"
+  },
+  "Alfabetik_91-02": {
+    "vid_id": "91-02",
+    "folder_id": "0091",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0091/degiske/91-02_cr_0.1.mp4"
+  },
+  "Vücut önü_91-03": {
+    "vid_id": "91-03",
+    "folder_id": "0091",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0091/degiske/91-03_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_05-01": {
+    "vid_id": "05-01",
+    "folder_id": "0005",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0005/degiske/05-01_cr_0.1.mp4"
+  },
+  "Hakkında_05-02": {
+    "vid_id": "05-02",
+    "folder_id": "0005",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0005/degiske/05-02_cr_0.1.mp4"
+  },
+  "Proje Ekibi_05-05": {
+    "vid_id": "05-05",
+    "folder_id": "0005",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0005/degiske/05-05_cr_0.1.mp4"
+  },
+  "İletişim_14-01": {
+    "vid_id": "14-01",
+    "folder_id": "0014",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0014/degiske/14-01_cr_0.1.mp4"
+  },
+  "Sözcük_14-02": {
+    "vid_id": "14-02",
+    "folder_id": "0014",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0014/degiske/14-02_cr_0.1.mp4"
+  },
+  "İşaret_14-03": {
+    "vid_id": "14-03",
+    "folder_id": "0014",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0014/degiske/14-03_cr_0.1.mp4"
+  },
+  "Alfabetik_20-01": {
+    "vid_id": "20-01",
+    "folder_id": "0020",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0020/degiske/20-01_cr_0.1.mp4"
+  },
+  "Vücut önü_20-02": {
+    "vid_id": "20-02",
+    "folder_id": "0020",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0020/degiske/20-02_cr_0.1.mp4"
+  },
+  "Ön yüz_20-04": {
+    "vid_id": "20-04",
+    "folder_id": "0020",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0020/degiske/20-04_cr_0.1.mp4"
+  },
+  "Baş_26-01": {
+    "vid_id": "26-01",
+    "folder_id": "0026",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0026/degiske/26-01_cr_0.1.mp4"
+  },
+  "Başın üstü/tepesi_26-02": {
+    "vid_id": "26-02",
+    "folder_id": "0026",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0026/degiske/26-02_cr_0.1.mp4"
+  },
+  "Göz_26-03": {
+    "vid_id": "26-03",
+    "folder_id": "0026",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0026/degiske/26-03_cr_0.1.mp4"
+  },
+  "Burun_50-01": {
+    "vid_id": "50-01",
+    "folder_id": "0050",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0050/degiske/50-01_cr_0.1.mp4"
+  },
+  "Kulak_50-03": {
+    "vid_id": "50-03",
+    "folder_id": "0050",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0050/degiske/50-03_cr_0.1.mp4"
+  },
+  "Yanak_50-05": {
+    "vid_id": "50-05",
+    "folder_id": "0050",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0050/degiske/50-05_cr_0.1.mp4"
+  },
+  "Ağız çevresi_65-01": {
+    "vid_id": "65-01",
+    "folder_id": "0065",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0065/degiske/65-01_cr_0.1.mp4"
+  },
+  "Vücut_65-02": {
+    "vid_id": "65-02",
+    "folder_id": "0065",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0065/degiske/65-02_cr_0.1.mp4"
+  },
+  "Boğaz/Boyun_89-01": {
+    "vid_id": "89-01",
+    "folder_id": "0089",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0089/degiske/89-01_cr_0.1.mp4"
+  },
+  "Omuz_92-01": {
+    "vid_id": "92-01",
+    "folder_id": "0092",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0092/degiske/92-01_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_24-01": {
+    "vid_id": "24-01",
+    "folder_id": "0024",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0024/degiske/24-01_cr_0.1.mp4"
+  },
+  "Hakkında_24-02": {
+    "vid_id": "24-02",
+    "folder_id": "0024",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0024/degiske/24-02_cr_0.1.mp4"
+  },
+  "Proje Ekibi_24-03": {
+    "vid_id": "24-03",
+    "folder_id": "0024",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0024/degiske/24-03_cr_0.1.mp4"
+  },
+  "İletişim_29-01": {
+    "vid_id": "29-01",
+    "folder_id": "0029",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0029/degiske/29-01_cr_0.1.mp4"
+  },
+  "Sözcük_29-02": {
+    "vid_id": "29-02",
+    "folder_id": "0029",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0029/degiske/29-02_cr_0.1.mp4"
+  },
+  "İşaret_29-03": {
+    "vid_id": "29-03",
+    "folder_id": "0029",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0029/degiske/29-03_cr_0.1.mp4"
+  },
+  "Alfabetik_54-01": {
+    "vid_id": "54-01",
+    "folder_id": "0054",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0054/degiske/54-01_cr_0.1.mp4"
+  },
+  "Vücut önü_54-02": {
+    "vid_id": "54-02",
+    "folder_id": "0054",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0054/degiske/54-02_cr_0.1.mp4"
+  },
+  "Ön yüz_54-03": {
+    "vid_id": "54-03",
+    "folder_id": "0054",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0054/degiske/54-03_cr_0.1.mp4"
+  },
+  "Baş_67-01": {
+    "vid_id": "67-01",
+    "folder_id": "0067",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0067/degiske/67-01_cr_0.1.mp4"
+  },
+  "Başın üstü/tepesi_85-01": {
+    "vid_id": "85-01",
+    "folder_id": "0085",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0085/degiske/85-01_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_11-01": {
+    "vid_id": "11-01",
+    "folder_id": "0011",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0011/degiske/11-01_cr_0.1.mp4"
+  },
+  "Hakkında_11-02": {
+    "vid_id": "11-02",
+    "folder_id": "0011",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0011/degiske/11-02_cr_0.1.mp4"
+  },
+  "Proje Ekibi_16-01": {
+    "vid_id": "16-01",
+    "folder_id": "0016",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0016/degiske/16-01_cr_0.1.mp4"
+  },
+  "İletişim_23-01": {
+    "vid_id": "23-01",
+    "folder_id": "0023",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0023/degiske/23-01_cr_0.1.mp4"
+  },
+  "Sözcük_28-01": {
+    "vid_id": "28-01",
+    "folder_id": "0028",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0028/degiske/28-01_cr_0.1.mp4"
+  },
+  "İşaret_28-02": {
+    "vid_id": "28-02",
+    "folder_id": "0028",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0028/degiske/28-02_cr_0.1.mp4"
+  },
+  "Alfabetik_28-04": {
+    "vid_id": "28-04",
+    "folder_id": "0028",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0028/degiske/28-04_cr_0.1.mp4"
+  },
+  "Vücut önü_33-01": {
+    "vid_id": "33-01",
+    "folder_id": "0033",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0033/degiske/33-01_cr_0.1.mp4"
+  },
+  "Ön yüz_35-01": {
+    "vid_id": "35-01",
+    "folder_id": "0035",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0035/degiske/35-01_cr_0.1.mp4"
+  },
+  "Baş_35-02": {
+    "vid_id": "35-02",
+    "folder_id": "0035",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0035/degiske/35-02_cr_0.1.mp4"
+  },
+  "Başın üstü/tepesi_37-01": {
+    "vid_id": "37-01",
+    "folder_id": "0037",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0037/degiske/37-01_cr_0.1.mp4"
+  },
+  "Göz_37-02": {
+    "vid_id": "37-02",
+    "folder_id": "0037",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0037/degiske/37-02_cr_0.1.mp4"
+  },
+  "Burun_59-01": {
+    "vid_id": "59-01",
+    "folder_id": "0059",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0059/degiske/59-01_cr_0.1.mp4"
+  },
+  "Kulak_59-02": {
+    "vid_id": "59-02",
+    "folder_id": "0059",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0059/degiske/59-02_cr_0.1.mp4"
+  },
+  "Yanak_99-01": {
+    "vid_id": "99-01",
+    "folder_id": "0099",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0099/degiske/99-01_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_19-01": {
+    "vid_id": "19-01",
+    "folder_id": "0019",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0019/degiske/19-01_cr_0.1.mp4"
+  },
+  "Hakkında_19-03": {
+    "vid_id": "19-03",
+    "folder_id": "0019",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0019/degiske/19-03_cr_0.1.mp4"
+  },
+  "Proje Ekibi_39-01": {
+    "vid_id": "39-01",
+    "folder_id": "0039",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0039/degiske/39-01_cr_0.1.mp4"
+  },
+  "İletişim_39-03": {
+    "vid_id": "39-03",
+    "folder_id": "0039",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0039/degiske/39-03_cr_0.1.mp4"
+  },
+  "Sözcük_49-01": {
+    "vid_id": "49-01",
+    "folder_id": "0049",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0049/degiske/49-01_cr_0.1.mp4"
+  },
+  "İşaret_56-02": {
+    "vid_id": "56-02",
+    "folder_id": "0056",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0056/degiske/56-02_cr_0.1.mp4"
+  },
+  "Alfabetik_58-01": {
+    "vid_id": "58-01",
+    "folder_id": "0058",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0058/degiske/58-01_cr_0.1.mp4"
+  },
+  "Vücut önü_61-01": {
+    "vid_id": "61-01",
+    "folder_id": "0061",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0061/degiske/61-01_cr_0.1.mp4"
+  },
+  "Ön yüz_61-02": {
+    "vid_id": "61-02",
+    "folder_id": "0061",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0061/degiske/61-02_cr_0.1.mp4"
+  },
+  "Baş_63-01": {
+    "vid_id": "63-01",
+    "folder_id": "0063",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0063/degiske/63-01_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_42-01": {
+    "vid_id": "42-01",
+    "folder_id": "0042",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0042/degiske/42-01_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_83-01": {
+    "vid_id": "83-01",
+    "folder_id": "0083",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0083/degiske/83-01_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_10-01": {
+    "vid_id": "10-01",
+    "folder_id": "0010",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0010/degiske/10-01_cr_0.1.mp4"
+  },
+  "Hakkında_10-02": {
+    "vid_id": "10-02",
+    "folder_id": "0010",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0010/degiske/10-02_cr_0.1.mp4"
+  },
+  "Proje Ekibi_10-03": {
+    "vid_id": "10-03",
+    "folder_id": "0010",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0010/degiske/10-03_cr_0.1.mp4"
+  },
+  "İletişim_95-01": {
+    "vid_id": "95-01",
+    "folder_id": "0095",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0095/degiske/95-01_cr_0.1.mp4"
+  },
+  "Sözcük_95-02": {
+    "vid_id": "95-02",
+    "folder_id": "0095",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0095/degiske/95-02_cr_0.1.mp4"
+  },
+  "İşaret_95-04": {
+    "vid_id": "95-04",
+    "folder_id": "0095",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0095/degiske/95-04_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_02-01": {
+    "vid_id": "02-01",
+    "folder_id": "0002",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0002/degiske/02-01_cr_0.1.mp4"
+  },
+  "Hakkında_02-02": {
+    "vid_id": "02-02",
+    "folder_id": "0002",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0002/degiske/02-02_cr_0.1.mp4"
+  },
+  "Proje Ekibi_08-01": {
+    "vid_id": "08-01",
+    "folder_id": "0008",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0008/degiske/08-01_cr_0.1.mp4"
+  },
+  "İletişim_41-01": {
+    "vid_id": "41-01",
+    "folder_id": "0041",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0041/degiske/41-01_cr_0.1.mp4"
+  },
+  "Sözcük_76-01": {
+    "vid_id": "76-01",
+    "folder_id": "0076",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0076/degiske/76-01_cr_0.1.mp4"
+  },
+  "İşaret_76-02": {
+    "vid_id": "76-02",
+    "folder_id": "0076",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0076/degiske/76-02_cr_0.1.mp4"
+  },
+  "Alfabetik_86-01": {
+    "vid_id": "86-01",
+    "folder_id": "0086",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0086/degiske/86-01_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_57-01": {
+    "vid_id": "57-01",
+    "folder_id": "0057",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0057/degiske/57-01_cr_0.1.mp4"
+  },
+  "Hakkında_60-01": {
+    "vid_id": "60-01",
+    "folder_id": "0060",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0060/degiske/60-01_cr_0.1.mp4"
+  },
+  "Proje Ekibi_60-02": {
+    "vid_id": "60-02",
+    "folder_id": "0060",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0060/degiske/60-02_cr_0.1.mp4"
+  },
+  "İletişim_90-01": {
+    "vid_id": "90-01",
+    "folder_id": "0090",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0090/degiske/90-01_cr_0.1.mp4"
+  },
+  "Sözcük_90-02": {
+    "vid_id": "90-02",
+    "folder_id": "0090",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0090/degiske/90-02_cr_0.1.mp4"
+  },
+  "İşaret_94-01": {
+    "vid_id": "94-01",
+    "folder_id": "0094",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0094/degiske/94-01_cr_0.1.mp4"
+  },
+  "Alfabetik_94-02": {
+    "vid_id": "94-02",
+    "folder_id": "0094",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0094/degiske/94-02_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_45-01": {
+    "vid_id": "45-01",
+    "folder_id": "0045",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0045/degiske/45-01_cr_0.1.mp4"
+  },
+  "Hakkında_71-01": {
+    "vid_id": "71-01",
+    "folder_id": "0071",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0071/degiske/71-01_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_48-01": {
+    "vid_id": "48-01",
+    "folder_id": "0048",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0048/degiske/48-01_cr_0.1.mp4"
+  },
+  "Hakkında_48-02": {
+    "vid_id": "48-02",
+    "folder_id": "0048",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0048/degiske/48-02_cr_0.1.mp4"
+  },
+  "Proje Ekibi_48-05": {
+    "vid_id": "48-05",
+    "folder_id": "0048",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0048/degiske/48-05_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_03-01": {
+    "vid_id": "03-01",
+    "folder_id": "0003",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0003/degiske/03-01_cr_0.1.mp4"
+  },
+  "Hakkında_03-02": {
+    "vid_id": "03-02",
+    "folder_id": "0003",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0003/degiske/03-02_cr_0.1.mp4"
+  },
+  "Proje Ekibi_11-01": {
+    "vid_id": "11-01",
+    "folder_id": "0011",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0011/degiske/11-01_cr_0.1.mp4"
+  },
+  "İletişim_11-02": {
+    "vid_id": "11-02",
+    "folder_id": "0011",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0011/degiske/11-02_cr_0.1.mp4"
+  },
+  "Sözcük_15-01": {
+    "vid_id": "15-01",
+    "folder_id": "0015",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0015/degiske/15-01_cr_0.1.mp4"
+  },
+  "İşaret_15-02": {
+    "vid_id": "15-02",
+    "folder_id": "0015",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0015/degiske/15-02_cr_0.1.mp4"
+  },
+  "Alfabetik_15-03": {
+    "vid_id": "15-03",
+    "folder_id": "0015",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0015/degiske/15-03_cr_0.1.mp4"
+  },
+  "Vücut önü_46-01": {
+    "vid_id": "46-01",
+    "folder_id": "0046",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0046/degiske/46-01_cr_0.1.mp4"
+  },
+  "Ön yüz_47-01": {
+    "vid_id": "47-01",
+    "folder_id": "0047",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0047/degiske/47-01_cr_0.1.mp4"
+  },
+  "Baş_59-01": {
+    "vid_id": "59-01",
+    "folder_id": "0059",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0059/degiske/59-01_cr_0.1.mp4"
+  },
+  "Başın üstü/tepesi_59-02": {
+    "vid_id": "59-02",
+    "folder_id": "0059",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0059/degiske/59-02_cr_0.1.mp4"
+  },
+  "Göz_64-01": {
+    "vid_id": "64-01",
+    "folder_id": "0064",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0064/degiske/64-01_cr_0.1.mp4"
+  },
+  "Burun_64-02": {
+    "vid_id": "64-02",
+    "folder_id": "0064",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0064/degiske/64-02_cr_0.1.mp4"
+  },
+  "Kulak_71-01": {
+    "vid_id": "71-01",
+    "folder_id": "0071",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0071/degiske/71-01_cr_0.1.mp4"
+  },
+  "Yanak_77-01": {
+    "vid_id": "77-01",
+    "folder_id": "0077",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0077/degiske/77-01_cr_0.1.mp4"
+  },
+  "Ağız çevresi_77-03": {
+    "vid_id": "77-03",
+    "folder_id": "0077",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0077/degiske/77-03_cr_0.1.mp4"
+  },
+  "Vücut_84-01": {
+    "vid_id": "84-01",
+    "folder_id": "0084",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0084/degiske/84-01_cr_0.1.mp4"
+  },
+  "Boğaz/Boyun_84-02": {
+    "vid_id": "84-02",
+    "folder_id": "0084",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0084/degiske/84-02_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_27-01": {
+    "vid_id": "27-01",
+    "folder_id": "0027",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0027/degiske/27-01_cr_0.1.mp4"
+  },
+  "Hakkında_27-02": {
+    "vid_id": "27-02",
+    "folder_id": "0027",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0027/degiske/27-02_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_34-01": {
+    "vid_id": "34-01",
+    "folder_id": "0034",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0034/degiske/34-01_cr_0.1.mp4"
+  },
+  "Hakkında_34-02": {
+    "vid_id": "34-02",
+    "folder_id": "0034",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0034/degiske/34-02_cr_0.1.mp4"
+  },
+  "Proje Ekibi_34-03": {
+    "vid_id": "34-03",
+    "folder_id": "0034",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0034/degiske/34-03_cr_0.1.mp4"
+  },
+  "İletişim_53-01": {
+    "vid_id": "53-01",
+    "folder_id": "0053",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0053/degiske/53-01_cr_0.1.mp4"
+  },
+  "Sözcük_68-01": {
+    "vid_id": "68-01",
+    "folder_id": "0068",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0068/degiske/68-01_cr_0.1.mp4"
+  },
+  "İşaret_68-02": {
+    "vid_id": "68-02",
+    "folder_id": "0068",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0068/degiske/68-02_cr_0.1.mp4"
+  },
+  "Alfabetik_78-02": {
+    "vid_id": "78-02",
+    "folder_id": "0078",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0078/degiske/78-02_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_07-01": {
+    "vid_id": "07-01",
+    "folder_id": "0007",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0007/degiske/07-01_cr_0.1.mp4"
+  },
+  "Hakkında_07-02": {
+    "vid_id": "07-02",
+    "folder_id": "0007",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0007/degiske/07-02_cr_0.1.mp4"
+  },
+  "Proje Ekibi_07-04": {
+    "vid_id": "07-04",
+    "folder_id": "0007",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0007/degiske/07-04_cr_0.1.mp4"
+  },
+  "İletişim_18-01": {
+    "vid_id": "18-01",
+    "folder_id": "0018",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0018/degiske/18-01_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_09-01": {
+    "vid_id": "09-01",
+    "folder_id": "0009",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0009/degiske/09-01_cr_0.1.mp4"
+  },
+  "Hakkında_09-02": {
+    "vid_id": "09-02",
+    "folder_id": "0009",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0009/degiske/09-02_cr_0.1.mp4"
+  },
+  "Proje Ekibi_21-01": {
+    "vid_id": "21-01",
+    "folder_id": "0021",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0021/degiske/21-01_cr_0.1.mp4"
+  },
+  "İletişim_21-02": {
+    "vid_id": "21-02",
+    "folder_id": "0021",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0021/degiske/21-02_cr_0.1.mp4"
+  },
+  "Sözcük_40-01": {
+    "vid_id": "40-01",
+    "folder_id": "0040",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0040/degiske/40-01_cr_0.1.mp4"
+  },
+  "İşaret_47-01": {
+    "vid_id": "47-01",
+    "folder_id": "0047",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0047/degiske/47-01_cr_0.1.mp4"
+  },
+  "Alfabetik_62-01": {
+    "vid_id": "62-01",
+    "folder_id": "0062",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0062/degiske/62-01_cr_0.1.mp4"
+  },
+  "Vücut önü_96-01": {
+    "vid_id": "96-01",
+    "folder_id": "0096",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0096/degiske/96-01_cr_0.1.mp4"
+  },
+  "Ön yüz_96-03": {
+    "vid_id": "96-03",
+    "folder_id": "0096",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0096/degiske/96-03_cr_0.1.mp4"
+  },
+  "Baş_98-01": {
+    "vid_id": "98-01",
+    "folder_id": "0098",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0098/degiske/98-01_cr_0.1.mp4"
+  },
+  "Başın üstü/tepesi_98-02": {
+    "vid_id": "98-02",
+    "folder_id": "0098",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0098/degiske/98-02_cr_0.1.mp4"
+  },
+  "Sözlük Kullanımı_32-01": {
+    "vid_id": "32-01",
+    "folder_id": "0032",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0032/degiske/32-01_cr_0.1.mp4"
+  },
+  "Hakkında_32-02": {
+    "vid_id": "32-02",
+    "folder_id": "0032",
+    "url": "https://tidsozluk.aile.gov.tr/vidz_proc/0032/degiske/32-02_cr_0.1.mp4"
+  }
+}

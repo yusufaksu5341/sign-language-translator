@@ -1,0 +1,35 @@
+# Large video files
+tid_dataset/
+*.mp4
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+.venv/
+venv/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp files
+*.tmp
+debug_page.png
+page_source.html
+alfabetik_page.html
+site_full.js
+siteIncs_v3.js.txt
+_jqNbs.js.txt
+word_page.html
+extracted_data.json
