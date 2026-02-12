@@ -1,195 +1,257 @@
-import requests
-import json
+import argparse
+import html
 import os
-from pathlib import Path
-from concurrent.futures import ThreadPoolExecutor, as_completed
+import re
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import dataclass
+from urllib.parse import urljoin
 
-# Configuration
-OUTPUT_FOLDER = "tid_dataset"
-MAPPING_FILE = "kelime_mapping.json"
-MAX_WORKERS = 3  # Number of concurrent downloads
-CHUNK_SIZE = 2 * 1024 * 1024  # 2MB chunks
-REQUEST_TIMEOUT = 60  # Increased timeout
-MAX_RETRIES = 3  # Retry failed downloads
-MIN_FILE_SIZE = 1024 * 10  # 10KB minimum (site may have small previews)
+import requests
 
-# Headers from browser
+BASE_URL = "https://tidsozluk.aile.gov.tr"
+ALPHABET = [
+    "A", "B", "C", "Ç", "D", "E", "F", "G", "Ğ", "H", "I", "İ",
+    "J", "K", "L", "M", "N", "O", "Ö", "P", "R", "S", "Ş", "T",
+    "U", "Ü", "V", "Y", "Z"
+]
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
-    "Referer": "https://tidsozluk.aile.gov.tr/tr/Alfabetik/Arama/A",
-    "sec-ch-ua": '"Not(A:Brand";v="8", "Chromium";v="144", "Chrome";v="144"',
-    "sec-ch-ua-platform": '"Windows"',
-    "sec-ch-ua-mobile": "?0",
-    "Range": "bytes=0-"
+    "Referer": f"{BASE_URL}/tr/Alfabetik/Arama/A",
 }
 
-def create_output_folder():
-    """Creates output folder if it doesn't exist."""
-    if not os.path.exists(OUTPUT_FOLDER):
-        os.makedirs(OUTPUT_FOLDER)
-        print(f"📁 Created folder: {OUTPUT_FOLDER}")
+CHUNK_SIZE = 512 * 1024
+MIN_FILE_SIZE = 4 * 1024
 
-def sanitize_filename(filename):
-    """Removes invalid characters from filename."""
-    invalid_chars = r'<>:"/\|?*'
+
+@dataclass
+class VideoEntry:
+    word: str
+    vid_id: str
+    url: str
+
+
+def sanitize_filename(filename: str) -> str:
+    invalid_chars = r'<>:"/\\|?*'
     for char in invalid_chars:
-        filename = filename.replace(char, '_')
-    return filename.strip()
+        filename = filename.replace(char, "_")
+    filename = " ".join(filename.split())
+    return filename.strip(" .") or "untitled"
 
-def download_video(word, video_info):
-    """
-    Downloads a single video with retry logic and streaming fix.
-    
-    Args:
-        word: Video ID (e.g., "22-01")
-        video_info: Dict containing 'url' and 'vid_id'
-    
-    Returns:
-        Tuple: (word, success_status, message)
-    """
-    url = video_info.get("url")
-    vid_id = video_info.get("vid_id", "unknown")
-    
-    if not url:
-        return (word, False, "No URL found")
-    
-    # Use video ID as filename for clarity
-    output_path = os.path.join(OUTPUT_FOLDER, f"{vid_id}.mp4")
-    
-    # Skip if already downloaded and file is valid
-    if os.path.exists(output_path):
-        file_size = os.path.getsize(output_path)
-        if file_size >= MIN_FILE_SIZE:
-            file_size_mb = file_size / (1024 * 1024)
-            return (word, True, f"Already exists ({file_size_mb:.2f}MB)")
-        else:
-            # File is incomplete, delete and retry
-            try:
-                os.remove(output_path)
-            except:
-                pass
-    
-    # Retry logic
-    for attempt in range(MAX_RETRIES):
+
+def decode_text(text: str) -> str:
+    cleaned = re.sub(r"<[^>]+>", "", text)
+    cleaned = html.unescape(cleaned)
+    return " ".join(cleaned.split()).strip()
+
+
+def extract_total_pages(page_html: str) -> int:
+    matches = re.findall(r'data-p="(\d+)"', page_html)
+    if not matches:
+        return 1
+    return max(int(value) for value in matches)
+
+
+def parse_entries_from_html(page_html: str) -> list[VideoEntry]:
+    item_pattern = re.compile(
+        r'<div class="rezult_item row".*?</a></div>',
+        re.DOTALL | re.IGNORECASE,
+    )
+    h3_pattern = re.compile(r"<h3[^>]*>(.*?)</h3>", re.DOTALL | re.IGNORECASE)
+    src_pattern = re.compile(
+        r'<source[^>]+src="([^"]+/degiske/[^"]+_cr_0\.1\.mp4)"',
+        re.IGNORECASE,
+    )
+
+    entries: list[VideoEntry] = []
+    for block in item_pattern.findall(page_html):
+        h3_match = h3_pattern.search(block)
+        if not h3_match:
+            continue
+
+        word = decode_text(h3_match.group(1))
+        if not word:
+            continue
+
+        sources = src_pattern.findall(block)
+        for src in sources:
+            full_url = urljoin(BASE_URL, src)
+            vid_match = re.search(r"/degiske/([^/_]+)_cr_0\.1\.mp4$", full_url)
+            if not vid_match:
+                continue
+            vid_id = vid_match.group(1)
+            entries.append(VideoEntry(word=word, vid_id=vid_id, url=full_url))
+
+    return entries
+
+
+def fetch_html(session: requests.Session, url: str, timeout: int, retries: int) -> str:
+    last_error = None
+    for attempt in range(1, retries + 1):
         try:
-            # Download WITHOUT streaming first (to get full content)
-            response = requests.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT, allow_redirects=True)
-            
-            if response.status_code in [200, 206]:  # 200 OK, 206 Partial Content (Range)
-                # Write entire content at once
-                with open(output_path, 'wb') as f:
-                    f.write(response.content)
-                
-                # Validate downloaded file
-                file_size = os.path.getsize(output_path)
-                if file_size < MIN_FILE_SIZE:
-                    os.remove(output_path)
-                    if attempt < MAX_RETRIES - 1:
-                        time.sleep(1)
-                        continue
-                    return (word, False, f"File too small ({file_size//1024}KB) after {MAX_RETRIES} attempts")
-                
-                file_size_mb = file_size / (1024 * 1024)
-                return (word, True, f"✓ Downloaded ({file_size_mb:.2f}MB)")
-            
-            elif response.status_code == 404:
-                return (word, False, "Video not found (404)")
-            elif response.status_code == 503:
-                if attempt < MAX_RETRIES - 1:
-                    time.sleep(2)
-                    continue
-                return (word, False, "Server unavailable (503)")
-            else:
-                if attempt < MAX_RETRIES - 1:
-                    time.sleep(1)
-                    continue
-                return (word, False, f"HTTP {response.status_code}")
-        
-        except requests.exceptions.Timeout:
-            if attempt < MAX_RETRIES - 1:
-                time.sleep(2)
-                continue
-            return (word, False, "Timeout after 3 attempts")
-        except requests.exceptions.ConnectionError:
-            if attempt < MAX_RETRIES - 1:
-                time.sleep(2)
-                continue
-            return (word, False, "Connection error (3 attempts)")
-        except Exception as e:
-            if attempt < MAX_RETRIES - 1:
-                time.sleep(1)
-                continue
-            return (word, False, f"Error: {str(e)[:30]}")
-    
-    return (word, False, "Max retries exceeded")
+            response = session.get(url, timeout=timeout)
+            response.raise_for_status()
+            return response.text
+        except Exception as error:
+            last_error = error
+            if attempt < retries:
+                time.sleep(1.0)
+    raise RuntimeError(f"HTML fetch failed: {url} ({last_error})")
 
-def main():
-    """Main download function."""
-    print("=" * 60)
-    print("🎥 Turkish Sign Language Dataset Video Downloader")
-    print("=" * 60)
-    
-    # Check if mapping file exists
-    if not os.path.exists(MAPPING_FILE):
-        print(f"❌ Error: {MAPPING_FILE} not found!")
-        print("   Run listele.py first to generate the mapping file.")
-        return
-    
-    # Load mapping
-    print(f"\n📖 Loading {MAPPING_FILE}...")
-    with open(MAPPING_FILE, "r", encoding="utf-8") as f:
-        word_mapping = json.load(f)
-    
-    if not word_mapping:
-        print("❌ Mapping file is empty!")
-        return
-    
-    total_words = len(word_mapping)
-    print(f"📊 Found {total_words} words to download")
-    
-    # Create output folder
-    create_output_folder()
-    
-    # Download videos concurrently
-    print(f"\n⬇️  Starting downloads ({MAX_WORKERS} concurrent)...\n")
-    
-    successful = 0
+
+def scrape_all_entries(timeout: int, retries: int) -> list[VideoEntry]:
+    session = requests.Session()
+    session.headers.update(HEADERS)
+
+    seen_vid: dict[str, VideoEntry] = {}
+
+    for index, letter in enumerate(ALPHABET, start=1):
+        first_page_url = f"{BASE_URL}/tr/Alfabetik/Arama/{letter}"
+        print(f"[{index}/{len(ALPHABET)}] Taraniyor: {letter}")
+
+        first_html = fetch_html(session, first_page_url, timeout, retries)
+        total_pages = extract_total_pages(first_html)
+        print(f"  Sayfa sayisi: {total_pages}")
+
+        letter_count = 0
+        for page_num in range(1, total_pages + 1):
+            page_url = first_page_url if page_num == 1 else f"{first_page_url}?p={page_num}"
+            page_html = first_html if page_num == 1 else fetch_html(session, page_url, timeout, retries)
+            page_entries = parse_entries_from_html(page_html)
+
+            for entry in page_entries:
+                if entry.vid_id not in seen_vid:
+                    seen_vid[entry.vid_id] = entry
+                    letter_count += 1
+
+        print(f"  Yeni video: {letter_count}")
+
+    session.close()
+    all_entries = list(seen_vid.values())
+    print(f"\nToplam benzersiz video: {len(all_entries)}")
+    return all_entries
+
+
+def download_one(entry: VideoEntry, output_folder: str, timeout: int, retries: int) -> tuple[bool, str, int]:
+    safe_word = sanitize_filename(entry.word)
+    filename = f"{safe_word}_{entry.vid_id}.mp4"
+    output_path = os.path.join(output_folder, filename)
+    temp_path = f"{output_path}.part"
+
+    if os.path.exists(output_path) and os.path.getsize(output_path) >= MIN_FILE_SIZE:
+        return True, filename, os.path.getsize(output_path)
+
+    headers = dict(HEADERS)
+    last_error = None
+
+    for attempt in range(1, retries + 1):
+        try:
+            with requests.get(entry.url, headers=headers, timeout=timeout, stream=True) as response:
+                response.raise_for_status()
+
+                downloaded = 0
+                with open(temp_path, "wb") as file_obj:
+                    for chunk in response.iter_content(chunk_size=CHUNK_SIZE):
+                        if not chunk:
+                            continue
+                        file_obj.write(chunk)
+                        downloaded += len(chunk)
+
+            if downloaded < MIN_FILE_SIZE:
+                if os.path.exists(temp_path):
+                    os.remove(temp_path)
+                last_error = RuntimeError("file too small")
+                if attempt < retries:
+                    time.sleep(0.8)
+                    continue
+                return False, filename, 0
+
+            os.replace(temp_path, output_path)
+            return True, filename, downloaded
+        except Exception as error:
+            last_error = error
+            if os.path.exists(temp_path):
+                os.remove(temp_path)
+            if attempt < retries:
+                time.sleep(1.0)
+
+    print(f"  Hata ({entry.vid_id}): {last_error}")
+    return False, filename, 0
+
+
+def download_all(entries: list[VideoEntry], output_folder: str, workers: int, timeout: int, retries: int) -> None:
+    os.makedirs(output_folder, exist_ok=True)
+
+    success = 0
     failed = 0
-    already_exist = 0
-    
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {
-            executor.submit(download_video, word, video_info): word 
-            for word, video_info in word_mapping.items()
+    total_bytes = 0
+
+    print(f"\nIndirme basliyor: {len(entries)} video | worker={workers}\n")
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        future_map = {
+            executor.submit(download_one, entry, output_folder, timeout, retries): entry
+            for entry in entries
         }
-        
-        completed = 0
-        for future in as_completed(futures):
-            word, success, message = future.result()
-            completed += 1
-            
-            status_icon = "✓" if success else "✗"
-            print(f"[{completed}/{total_words}] {status_icon} {word:25} {message}")
-            
-            if success:
-                if "Already exists" in message:
-                    already_exist += 1
-                else:
-                    successful += 1
+
+        for index, future in enumerate(as_completed(future_map), start=1):
+            ok, filename, size = future.result()
+            if ok:
+                success += 1
+                total_bytes += size
+                print(f"[{index}/{len(entries)}] OK   {filename}")
             else:
                 failed += 1
-    
-    # Summary
-    print("\n" + "=" * 60)
-    print("📈 Download Summary")
-    print("=" * 60)
-    print(f"✓ Successfully downloaded: {successful}")
-    print(f"⊘ Already existed:        {already_exist}")
-    print(f"✗ Failed:                 {failed}")
-    print(f"  Total words:            {total_words}")
-    print(f"📂 Output folder:         {os.path.abspath(OUTPUT_FOLDER)}")
-    print("=" * 60)
+                print(f"[{index}/{len(entries)}] FAIL {filename}")
+
+    print("\n" + "=" * 70)
+    print("INDIRME OZETI")
+    print("=" * 70)
+    print(f"Basarili : {success}")
+    print(f"Hatali   : {failed}")
+    print(f"Toplam   : {len(entries)}")
+    print(f"Boyut    : {total_bytes / (1024 * 1024):.2f} MB")
+    print(f"Klasor   : {os.path.abspath(output_folder)}")
+    print("=" * 70)
+
+
+def build_arg_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="TID sozlugunden tum kelime-videolari dogrudan scrape edip indirir (mapping dosyasi kullanmaz)."
+    )
+    parser.add_argument("--output", default="tid_dataset", help="Indirme klasoru")
+    parser.add_argument("--workers", type=int, default=8, help="Paralel indirme sayisi")
+    parser.add_argument("--timeout", type=int, default=30, help="HTTP timeout (sn)")
+    parser.add_argument("--retries", type=int, default=4, help="Yeniden deneme")
+    parser.add_argument("--max-downloads", type=int, default=0, help="Test icin ilk N videoyu indir (0=tumu)")
+    return parser
+
+
+def main() -> None:
+    args = build_arg_parser().parse_args()
+
+    print("=" * 70)
+    print("TID TAM ARSIV SCRAPER + DOWNLOADER")
+    print("(kelime_mapping.json kullanilmaz)")
+    print("=" * 70)
+
+    entries = scrape_all_entries(timeout=args.timeout, retries=args.retries)
+    if not entries:
+        print("Hic video bulunamadi.")
+        return
+
+    if args.max_downloads > 0:
+        entries = entries[:args.max_downloads]
+        print(f"Test modu: {len(entries)} video indirilecek")
+
+    download_all(
+        entries=entries,
+        output_folder=args.output,
+        workers=max(1, args.workers),
+        timeout=args.timeout,
+        retries=max(1, args.retries),
+    )
+
 
 if __name__ == "__main__":
     main()
