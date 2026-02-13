@@ -1,4 +1,3 @@
-const API_URL = "http://127.0.0.1:8000/predict";
 const SESSION_ID = "meet-session-1";
 const FRAME_INTERVAL_MS = 500;
 
@@ -34,13 +33,17 @@ async function sendFrame(video) {
   ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
   const imageBase64 = canvas.toDataURL("image/jpeg", 0.75);
 
-  const res = await fetch(API_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ session_id: SESSION_ID, image_base64: imageBase64 }),
+  const response = await chrome.runtime.sendMessage({
+    type: "predict",
+    payload: { session_id: SESSION_ID, image_base64: imageBase64 },
   });
 
-  const data = await res.json();
+  if (!response || !response.ok) {
+    const reason = response?.error || "no response from background";
+    throw new Error(reason);
+  }
+
+  const data = response.data;
   if (data.error) {
     overlay.textContent = `Sign: error (${data.error})`;
     return;
@@ -66,7 +69,7 @@ async function loop() {
   try {
     await sendFrame(video);
   } catch (err) {
-    overlay.textContent = `Sign: API not reachable`;
+    overlay.textContent = `Sign: API not reachable (${String(err).slice(0, 80)})`;
   }
 
   setTimeout(loop, FRAME_INTERVAL_MS);
