@@ -47,6 +47,18 @@ Overlay output format:
 python serve_inference.py --api-key YOUR_ROBOFLOW_API_KEY --model-id turk-isaret-dili/2 --dataset dataset1 --host 127.0.0.1 --port 8000
 ```
 
+This local mode now combines `dataset1` + Roboflow model output:
+
+- Builds a visual profile from `dataset1` videos
+- Blends Roboflow confidence with dataset match score
+- Suppresses noisy predictions when frame does not match dataset profile
+
+Optional tuning flags:
+
+```bash
+--dataset-sample-videos 350 --min-dataset-match 0.18 --dataset-profile-cache models/dataset1_profile.npz
+```
+
 Or set environment variable:
 
 ```powershell
