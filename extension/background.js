@@ -1,6 +1,10 @@
 const ROBOFLOW_API_URL = "https://serverless.roboflow.com";
 const ROBOFLOW_MODEL_ID = "turk-isaret-dili/2";
 const DEFAULT_ROBOFLOW_API_KEY = "p6t4i9gco8ZGaA3Y1i26";
+const LOCAL_API_URLS = [
+  "http://127.0.0.1:8000/predict",
+  "http://localhost:8000/predict",
+];
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.local.get(["roboflow_api_key"], (items) => {
@@ -67,6 +71,38 @@ async function inferRoboflow(imageBase64, timeoutMs = 12000) {
   }
 }
 
+async function inferLocalApi(payload, timeoutMs = 7000) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    let lastError = null;
+    for (const url of LOCAL_API_URLS) {
+      try {
+        const res = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+          signal: controller.signal,
+        });
+
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error(`HTTP ${res.status}: ${text}`);
+        }
+
+        return await res.json();
+      } catch (error) {
+        lastError = error;
+      }
+    }
+
+    throw new Error(String(lastError || "local api unreachable"));
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (!message || message.type !== "predict") {
     return;
@@ -74,7 +110,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
   (async () => {
     try {
-      const data = await inferRoboflow(message.payload.image_base64, 12000);
+      let data;
+      try {
+        data = await inferLocalApi(message.payload, 7000);
+      } catch {
+        data = await inferRoboflow(message.payload.image_base64, 12000);
+      }
       sendResponse({ ok: true, data });
     } catch (error) {
       sendResponse({ ok: false, error: String(error || "roboflow unreachable") });

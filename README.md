@@ -41,6 +41,14 @@ Overlay output format:
 
 - `Sign: <label> (<confidence>)`
 
+Important: if you want `dataset1`-merged words in Meet, run local API first:
+
+```bash
+python serve_inference.py --api-key YOUR_ROBOFLOW_API_KEY --model-id turk-isaret-dili/2 --dataset dataset1 --host 127.0.0.1 --port 8000
+```
+
+Extension now tries local API first (dataset1 + model merge), then falls back to direct Roboflow.
+
 ### Auto start extension (PowerShell)
 
 ```powershell
