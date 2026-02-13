@@ -1,10 +1,19 @@
 const ROBOFLOW_API_URL = "https://serverless.roboflow.com";
 const ROBOFLOW_MODEL_ID = "turk-isaret-dili/2";
+const DEFAULT_ROBOFLOW_API_KEY = "p6t4i9gco8ZGaA3Y1i26";
+
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.storage.local.get(["roboflow_api_key"], (items) => {
+    if (!items.roboflow_api_key && DEFAULT_ROBOFLOW_API_KEY) {
+      chrome.storage.local.set({ roboflow_api_key: DEFAULT_ROBOFLOW_API_KEY });
+    }
+  });
+});
 
 async function getApiKey() {
   return new Promise((resolve) => {
     chrome.storage.local.get(["roboflow_api_key"], (items) => {
-      resolve(items.roboflow_api_key || "");
+      resolve(items.roboflow_api_key || DEFAULT_ROBOFLOW_API_KEY || "");
     });
   });
 }

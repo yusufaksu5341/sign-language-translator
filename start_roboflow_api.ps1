@@ -5,16 +5,18 @@ param(
     [int]$Port = 8000
 )
 
+$defaultApiKey = "p6t4i9gco8ZGaA3Y1i26"
+
+if ([string]::IsNullOrWhiteSpace($ApiKey)) {
+    $ApiKey = $defaultApiKey
+}
+
 $ErrorActionPreference = 'Stop'
 Set-Location $PSScriptRoot
 
 $pythonExe = Join-Path $PSScriptRoot ".venv\Scripts\python.exe"
 if (-not (Test-Path $pythonExe)) {
     $pythonExe = "python"
-}
-
-if ([string]::IsNullOrWhiteSpace($ApiKey)) {
-    $ApiKey = Read-Host "ROBOFLOW_API_KEY gir"
 }
 
 if ([string]::IsNullOrWhiteSpace($ApiKey)) {
