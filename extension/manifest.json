@@ -2,12 +2,11 @@
   "manifest_version": 3,
   "name": "Sign Language Translator for Meet",
   "version": "0.1.0",
-  "description": "Captures Google Meet camera frames and sends them to local sign-to-text inference API.",
+  "description": "Captures Google Meet camera frames and sends them to Roboflow inference API.",
   "permissions": ["storage", "activeTab", "scripting"],
   "host_permissions": [
     "https://meet.google.com/*",
-    "http://127.0.0.1:8000/*",
-    "http://localhost:8000/*"
+    "https://serverless.roboflow.com/*"
   ],
   "background": {
     "service_worker": "background.js"
