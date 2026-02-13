@@ -41,6 +41,20 @@ Overlay output format:
 
 - `Sign: <label> (<confidence>)`
 
+### Auto start extension (PowerShell)
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\start_extension_auto.ps1
+```
+
+This opens Chrome with the unpacked `extension/` automatically loaded.
+
+Optional local API + extension together:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\start_extension_auto.ps1 -StartLocalApi
+```
+
 ## Optional: local API mode (not required)
 
 ```bash
