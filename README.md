@@ -33,6 +33,16 @@ python serve_inference.py --model-id turk-isaret-dili/2 --dataset dataset1 --hos
 powershell -ExecutionPolicy Bypass -File .\run_all.ps1 -RoboflowApiKey YOUR_ROBOFLOW_API_KEY -StartApi -KeepApiRunning
 ```
 
+### Fast start (auto command file)
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\start_roboflow_api.ps1
+```
+
+Or double click:
+
+- `start_roboflow_api.bat`
+
 ## 4) Load Chrome extension
 
 1. Open `chrome://extensions`
