@@ -8,6 +8,7 @@ import cv2
 import joblib
 import numpy as np
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import uvicorn
 
@@ -59,6 +60,14 @@ class ModelRuntime:
 runtime: ModelRuntime | None = None
 app = FastAPI(title="Sign Translator Inference API")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.post("/predict")
 def predict(req: PredictRequest):
@@ -68,6 +77,11 @@ def predict(req: PredictRequest):
         return runtime.predict(req.session_id, req.image_base64)
     except Exception as exc:
         return {"error": str(exc)}
+
+
+@app.get("/health")
+def health():
+    return {"ok": True, "runtime_loaded": runtime is not None}
 
 
 def main() -> None:
