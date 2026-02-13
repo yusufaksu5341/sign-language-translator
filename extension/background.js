@@ -5,6 +5,7 @@ const LOCAL_API_URLS = [
   "http://127.0.0.1:8000/predict",
   "http://localhost:8000/predict",
 ];
+const ALLOW_DIRECT_ROBOFLOW_FALLBACK = false;
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.local.get(["roboflow_api_key"], (items) => {
@@ -110,15 +111,23 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
   (async () => {
     try {
-      let data;
-      try {
-        data = await inferLocalApi(message.payload, 7000);
-      } catch {
+      let data = await inferLocalApi(message.payload, 7000);
+      if (!data && ALLOW_DIRECT_ROBOFLOW_FALLBACK) {
         data = await inferRoboflow(message.payload.image_base64, 12000);
       }
       sendResponse({ ok: true, data });
     } catch (error) {
-      sendResponse({ ok: false, error: String(error || "roboflow unreachable") });
+      if (ALLOW_DIRECT_ROBOFLOW_FALLBACK) {
+        try {
+          const data = await inferRoboflow(message.payload.image_base64, 12000);
+          sendResponse({ ok: true, data });
+          return;
+        } catch (fallbackError) {
+          sendResponse({ ok: false, error: String(fallbackError || "inference unreachable") });
+          return;
+        }
+      }
+      sendResponse({ ok: false, error: String(error || "local merged api unreachable") });
     }
   })();
 

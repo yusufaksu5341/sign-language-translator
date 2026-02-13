@@ -10,7 +10,7 @@ from sign_translator.landmarks import build_feature_dataset
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Extract landmark feature sequences from sign videos")
-    parser.add_argument("--dataset", default="tid_dataset", help="Raw video dataset directory")
+    parser.add_argument("--dataset", default="dataset1", help="Raw video dataset directory")
     parser.add_argument("--output", default="processed/sign_dataset.npz", help="Output NPZ path")
     parser.add_argument("--sequence-len", type=int, default=30)
     parser.add_argument("--max-frames", type=int, default=120)

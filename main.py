@@ -219,7 +219,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="TID sozlugunden tum kelime-videolari dogrudan scrape edip indirir (mapping dosyasi kullanmaz)."
     )
-    parser.add_argument("--output", default="tid_dataset", help="Indirme klasoru")
+    parser.add_argument("--output", default="dataset1", help="Indirme klasoru")
     parser.add_argument("--workers", type=int, default=8, help="Paralel indirme sayisi")
     parser.add_argument("--timeout", type=int, default=30, help="HTTP timeout (sn)")
     parser.add_argument("--retries", type=int, default=4, help="Yeniden deneme")

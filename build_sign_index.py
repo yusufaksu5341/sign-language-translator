@@ -10,7 +10,7 @@ from sign_translator.landmarks import build_feature_dataset
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build one-shot sign index from dataset videos")
-    parser.add_argument("--dataset", default="tid_dataset")
+    parser.add_argument("--dataset", default="dataset1")
     parser.add_argument("--output", default="models/sign_index.npz")
     parser.add_argument("--sequence-len", type=int, default=20)
     parser.add_argument("--max-frames", type=int, default=40)

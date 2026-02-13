@@ -5,3 +5,4 @@ scikit-learn==1.6.1
 joblib==1.4.2
 fastapi==0.115.8
 uvicorn==0.34.0
+inference-sdk; python_version < "3.13"

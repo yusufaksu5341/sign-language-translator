@@ -29,4 +29,13 @@ Write-Host "Model: $ModelId"
 Write-Host "Dataset: $DatasetPath"
 Write-Host "Port: $Port"
 
-& $pythonExe serve_inference.py --api-key $ApiKey --model-id $ModelId --dataset $DatasetPath --host 127.0.0.1 --port $Port
+$args = @(
+    "serve_inference.py",
+    "--api-key", $ApiKey,
+    "--model-id", $ModelId,
+    "--dataset", $DatasetPath,
+    "--host", "127.0.0.1",
+    "--port", "$Port"
+)
+
+& $pythonExe @args

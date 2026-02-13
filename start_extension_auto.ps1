@@ -45,14 +45,16 @@ if ($StartLocalApi) {
     }
 
     Write-Host "Local API baslatiliyor..." -ForegroundColor Cyan
-    Start-Process -FilePath $pythonExe -ArgumentList @(
+    $apiArgs = @(
         "serve_inference.py",
         "--api-key", $ApiKey,
         "--model-id", $ModelId,
         "--dataset", $DatasetPath,
         "--host", "127.0.0.1",
         "--port", "$Port"
-    ) | Out-Null
+    )
+
+    Start-Process -FilePath $pythonExe -ArgumentList $apiArgs | Out-Null
 
     Start-Sleep -Seconds 2
 }
