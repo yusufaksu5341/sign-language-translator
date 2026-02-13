@@ -5,6 +5,7 @@ This repository now includes an end-to-end pipeline to:
 1. Read sign videos from `tid_dataset/` with robust label parsing
 2. Extract frame embeddings from videos (OpenCV)
 3. Train a sign-to-text classifier
+4. Build one-shot sign index (recommended for sparse classes)
 4. Run real-time webcam inference
 5. Connect Google Meet video frames to a local inference API via Chrome extension
 
@@ -12,6 +13,15 @@ This repository now includes an end-to-end pipeline to:
 
 ```bash
 pip install -r requirements.txt
+
+## Quick one-command run (Windows PowerShell)
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\run_all.ps1 -Quick -StartApi
+```
+
+- `-Quick` uses a faster, smaller training profile.
+- Add `-KeepApiRunning` if you want the API process to stay open for Meet testing.
 ```
 
 ## 2) Prepare dataset features
@@ -40,6 +50,14 @@ This saves:
 
 `--max-classes 200` keeps training fast for MVP. Increase later for broader vocabulary.
 
+## 3.5) Build one-shot index (important)
+
+```bash
+python build_sign_index.py --dataset tid_dataset --output models/sign_index.npz --sequence-len 20 --max-frames 40 --frame-size 24
+```
+
+This mode works better when many words have very few videos.
+
 ## 4) Real-time webcam inference
 
 ```bash
@@ -53,7 +71,7 @@ Press `q` to quit.
 ### Start local API
 
 ```bash
-python serve_inference.py --model models/sign_classifier.joblib --host 127.0.0.1 --port 8000
+python serve_inference.py --model models/sign_classifier.joblib --index models/sign_index.npz --host 127.0.0.1 --port 8000
 ```
 
 ### Load extension
